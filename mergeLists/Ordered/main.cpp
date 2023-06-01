@@ -27,7 +27,6 @@ int main(void){
     list1.insert(60);
 
 
-
     list2.insert(1);
     list2.insert(2);
     list2.insert(9);
@@ -41,12 +40,6 @@ int main(void){
     list2.insert(62);
     list2.insert(65);
 
-    //list2.print();
-
-
-    //std::cout << list1.search(1002);
-    //list1.merge_list(list2);
-    //std::cout << (nullptr == NULL);
+    list1.merge_list(list2);
     //list1.print();
-    //list2.print();
 }
