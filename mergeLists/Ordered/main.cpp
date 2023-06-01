@@ -1,7 +1,7 @@
 /*
     Question:
         Merge two given linkedlists into one a single linked list.
-        (Unordered)
+        (Ordered)
 */
 
 // Solution starts at line 154 on orderedlinkedlist.h
