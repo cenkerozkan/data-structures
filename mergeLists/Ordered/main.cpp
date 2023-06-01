@@ -11,6 +11,11 @@
 
 int main(void){
     Orderedlinkedlist<int> list1, list2;
+    Orderedlinkedlist<int> list3, list4;
+
+
+    std::cout << "Case 1: If current list is empty.\n";
+    list3.merge_list(list4);
 
     list1.insert(3);
     list1.insert(7);
@@ -33,13 +38,15 @@ int main(void){
     list2.insert(31);
     list2.insert(45);
     list2.insert(57);
+    list2.insert(62);
+    list2.insert(65);
 
     //list2.print();
 
 
     //std::cout << list1.search(1002);
-    list1.merge_list(list2);
+    //list1.merge_list(list2);
     //std::cout << (nullptr == NULL);
-    list1.print();
+    //list1.print();
     //list2.print();
 }

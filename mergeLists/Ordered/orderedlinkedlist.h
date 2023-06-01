@@ -161,27 +161,28 @@ class Orderedlinkedlist:public Linkedlist<T>{
             // as 'insert()' method does. But this time
             // in a while loop in order to iterate the 
             // given linked list parameter.
-            while(cursor != NULL){
-                // Case 1: If the current list is empty.
-                if(Linkedlist<T>::first == NULL || cursor == NULL){
-                    std::cout << "One or both lists are empty.\n";
-                }
 
-                // Case 2: Lists are not empty.
-                else{
-                    current = Linkedlist<T>::first;
-                    // Traversing the current list.
-                    while(current != NULL){
-                        if(current->info >= cursor->info){
-                            break;
-                        }
-                        else{
-                            trail_current = current;
-                            current = current->link;
-                        }
+            // Case 1: Current list is empty.
+            if(Linkedlist<T>::first == NULL){
+                std::cout << "One or both lists are empty.\n";
+                return;
+            }
+
+            // Case 2: Parameter list is empty.
+            while(cursor != NULL){
+                // Case 3: Lists are not empty.
+                current = Linkedlist<T>::first;
+                // Traversing the current list.
+                while(current != NULL){
+                    if(current->info >= cursor->info){
+                        break;
+                    }
+                    else{
+                        trail_current = current;
+                        current = current->link;
                     }
 
-                    // Case 3: Head value bigger than cursor value.
+                    // Case 4: Head value bigger than cursor value.
                     if(current == Linkedlist<T>::first){
                         new_node = new Node<T>;
                         new_node->info = cursor->info;
@@ -190,14 +191,14 @@ class Orderedlinkedlist:public Linkedlist<T>{
                         Linkedlist<T>::first = new_node;
                     }
 
-                    else{
+                    else{   
                         new_node = new Node<T>;
                         new_node->info = cursor->info;
 
                         trail_current->link = new_node;
                         new_node->link = current;
 
-                        // Case 4: Cursor value bigger than last value.
+                        // Case 5: Cursor value bigger than last value.
                         if(current == NULL){
                             Linkedlist<T>::last = new_node;
                         }
