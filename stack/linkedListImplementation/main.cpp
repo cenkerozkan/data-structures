@@ -2,7 +2,7 @@
 #include "stack.h"
 
 int main(void){
-    stack<int> s1(25), s2(25);
+    stack<int> s1, s2;
     s1.push(1);
     std::cout << s1.top() << "\n";
     s1.push(2);

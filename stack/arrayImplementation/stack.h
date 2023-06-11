@@ -9,7 +9,7 @@
 #define H_Stack
 #include <iostream>
 #include <cassert>
-#include "stachADT.h"
+#include "stackADT.h"
 
 template <class T>
 class stack: public stackADT<T>{
@@ -19,7 +19,7 @@ class stack: public stackADT<T>{
         T *list;       // Pointer to the array that holds the stack elements.
 
         // Function to make a copy of another stack.
-        void copy_stack(stack<T> &_param){
+        void copy_stack(const stack<T> &_param){
             delete [] list;
             size = _param.size;
             stack_top = _param.stack_top;
@@ -58,7 +58,7 @@ class stack: public stackADT<T>{
             delete [] list;
         }
 
-        T operator= (stack<T> &_param){
+        stack<T> operator= (stack<T> &_param){
             if(this != &_param){
                 copy_stack(_param);
             }
